@@ -1,24 +1,39 @@
 import React from 'react';
-import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './App.css';
-import { logDOM } from '@testing-library/dom';
+import Result from './Result';
 
-class Home extends React.Component {
+class Home extends React.Component {    
+
     constructor (props) {
         super(props);
+        this.state = {
+            index: null,
+        };
     }
+
     render() {
+        console.log("In Home render");
+
         const images = ["logos/bundesliga-logo.png", "logos/laliga-logo.png", "logos/epl-logo.png", "logos/seriea-logo.png", "logos/ligue1-logo.png", "logos/eredivise-logo.png"]
         const row1 = [], row2 = [];
         for (const [index, value] of images.entries()) {            
-            if (index < images.length / 2) {
-                row1.push(<button className="column" key={index}>
-                        <img src={value} className="container"></img>
-                    </button>)
+            if (index < 3) {                
+                row1.push(                                 
+                    <button className="column" key={index} onClick={() => this.ButtonClicked(index)}>
+                        <Link to={{pathname: "/result", data: index}}>
+                            <img src={value} className="container" alt=""></img>
+                        </Link>
+                    </button>
+                )
             }else {
-                row2.push(<button className="column" key={index}>
-                        <img src={value} className="container"></img>
-                    </button>)
+                row2.push(                
+                    <button className="column" key={index} onClick={() => this.ButtonClicked(index)}>
+                        <Link to={{pathname: "/result", data: index}}>
+                            <img src={value} className="container" alt=""></img>
+                        </Link>
+                    </button>
+                )
             }
           }
         return (
@@ -35,9 +50,12 @@ class Home extends React.Component {
                 </div>        
         );
     }
-    SearchButtonClicked() {
-        var search = document.getElementById("search-box").value;
-        console.log(search);
+
+    ButtonClicked(id) {
+        this.setState({
+            index: id,            
+        }, () => {console.log("Index: ", this.state.index);});                
     }
 }
+
 export default Home;

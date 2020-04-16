@@ -7,12 +7,13 @@ import Result from './Result';
 function App() {
   return (
     <BrowserRouter>
-    <div className="App">
-      <Switch>
-        <Route path="/" exact component={Home}></Route>      
-        <Route path="/result" exact component={Result}></Route>
-      </Switch>
-    </div>
+      <div className="App">
+        {/* <Home /> */}
+        <Switch>
+          <Route path="/" exact component={Home}></Route>                     
+          <Route path="/result" exact component={Result}></Route>
+        </Switch>
+      </div>
     </BrowserRouter>
   );
 }
