@@ -3,6 +3,7 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import './App.css';
 import Home from './Home';
 import Result from './Result';
+// import Dummy from './Dummy';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home}></Route>                     
           <Route path="/result" exact component={Result}></Route>
+          {/* <Route path="/dummy" exact component={Dummy}></Route> */}
         </Switch>
       </div>
     </BrowserRouter>

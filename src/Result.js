@@ -1,23 +1,31 @@
 import React from 'react'; 
-import {useState, useEffect} from 'react-router-dom';
+import {useState, useEffect} from 'react';
+import { Link } from 'react-router-dom';
 import './App.css';
-import { runInThisContext } from 'vm';
+import Dummy from './Dummy';
+// import { runInThisContext } from 'vm';
 
 class Result extends React.Component {        
 
     constructor(props) {        
         super(props);
-        this.index = -1;              
+        this.data = null;
+        this.buttonID = -1;           
         this.url = "";
         this.bundesliga = 'http://api.football-data.org/v2/competitions/2002/standings';
+        this.ucl = 'http://api.football-data.org/v2/competitions/2001/standings';
         this.epl = 'http://api.football-data.org/v2/competitions/2021/standings';  
         this.eredivise = 'http://api.football-data.org/v2/competitions/2003/standings';
         this.laliga = 'http://api.football-data.org/v2/competitions/2014/standings';
         this.ligue1 = 'http://api.football-data.org/v2/competitions/2015/standings';
         this.seriea = 'http://api.football-data.org/v2/competitions/2034/standings';
+
+        this.state = {
+            received: false,
+        }
         /*
         2000: WC
-        2001: USL
+        2001: UCL
         2002: Bundesliga
         2021: EPL
         2003: Eredivise
@@ -26,20 +34,20 @@ class Result extends React.Component {
         2034: SerieA
         */
     }
-    componentDidMount() {
-        console.log("Result componentDidMount");
-        switch (this.index) {
+    
+    async componentDidMount() {
+        switch (this.buttonID) {
             case 0:
-                this.url = this.bundesliga;
+                this.url = this.laliga;
                 break;
             case 1:
-                    this.url = this.laliga;
+                    this.url = this.ucl;
                 break;
             case 2:
-                    this.url = this.epl;
+                    this.url = this.bundesliga;
                 break;
             case 3:
-                    this.url = this.seriea;
+                    this.url = this.epl;
                 break;
             case 4:
                     this.url = this.ligue1;
@@ -51,33 +59,52 @@ class Result extends React.Component {
                 console.log("Switch case default error!");
                 break;
         }
-        this.fetchItems();
+
+        this.data = await this.fetchData();
+        console.log("Retrieved Data: ", this.data);
+        if (this.data != null) {
+            this.setState({
+                received: true,
+            })
+        }
+        // this.render();
     }
 
-    fetchItems = async () => {
-                
-        const data = await fetch(this.url, {
+
+    async fetchData() {
+        const rawData = await fetch(this.url, {
             method: 'GET',
             headers: {
                 'X-AUTH-TOKEN': '2df120a38d634333bc4c7a5c2a0c4cba',
             }
         })
-        const items = await data.json();
-        console.log(items);
+        const dataJSON = await rawData.json();
+        
+        console.log(dataJSON.standings[0].table[0].team.name);
+        return dataJSON;
     }
 
-
     render() { 
-        this.index = this.props.location.data;
-        console.log("In Result Render()", this.index);
-        // console.log("This-> ", this.index);
-        return (
-            <div className="Result">
-                <nav>
-                    <h1>Search Result</h1>            
-                </nav>
+        this.buttonID = this.props.location.data;
+        if (this.data == null) {
+            console.log("Data yet to be received...");
+            return (
+                <div className="Result">
+                    <nav>
+                        <h1>Loading...</h1>            
+                    </nav>                    
+                </div>
+            );
+        }
+        else {
+            console.log("Data received!");
+            return (
+            <div>
+                <Dummy data={this.data} />
             </div>
-        );
+            );            
+        }                                             
+
     }
 }
 

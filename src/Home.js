@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './App.css';
-import Result from './Result';
 
 class Home extends React.Component {    
 
@@ -15,7 +14,7 @@ class Home extends React.Component {
     render() {
         console.log("In Home render");
 
-        const images = ["logos/bundesliga-logo.png", "logos/laliga-logo.png", "logos/epl-logo.png", "logos/seriea-logo.png", "logos/ligue1-logo.png", "logos/eredivise-logo.png"]
+        const images = ["logos/laliga-logo.png", "logos/ucl-logo.png", "logos/bundesliga-logo.png", "logos/epl-logo.png", "logos/ligue1-logo.png", "logos/eredivise-logo.png"]
         const row1 = [], row2 = [];
         for (const [index, value] of images.entries()) {            
             if (index < 3) {                
@@ -25,7 +24,7 @@ class Home extends React.Component {
                             <img src={value} className="container" alt=""></img>
                         </Link>
                     </button>
-                )
+                );
             }else {
                 row2.push(                
                     <button className="column" key={index} onClick={() => this.ButtonClicked(index)}>
@@ -33,7 +32,7 @@ class Home extends React.Component {
                             <img src={value} className="container" alt=""></img>
                         </Link>
                     </button>
-                )
+                );
             }
           }
         return (
