@@ -2,10 +2,10 @@ import React from 'react';
 import {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import './App.css';
-import Dummy from './Dummy';
+import PointsTable from './PointsTable';
 // import { runInThisContext } from 'vm';
 
-class Result extends React.Component {        
+class Loading extends React.Component {        
 
     constructor(props) {        
         super(props);
@@ -87,25 +87,24 @@ class Result extends React.Component {
     render() { 
         this.buttonID = this.props.location.data;
         if (this.data == null) {
-            console.log("Data yet to be received...");
             return (
-                <div className="Result">
-                    <nav>
-                        <h1>Loading...</h1>            
-                    </nav>                    
+                <div id="loader-container">
+                    <p id="loadingText">Loading</p>
                 </div>
             );
         }
         else {
-            console.log("Data received!");
             return (
             <div>
-                <Dummy data={this.data} />
+                <PointsTable data={this.data} />
             </div>
+            // <div id="loader-container">
+            //     <p id="loadingText">Loading</p>
+            // </div>
             );            
         }                                             
 
     }
 }
 
-export default Result;
+export default Loading;
