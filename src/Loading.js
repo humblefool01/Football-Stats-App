@@ -61,7 +61,6 @@ class Loading extends React.Component {
         }
 
         this.data = await this.fetchData();
-        console.log("Retrieved Data: ", this.data);
         if (this.data != null) {
             this.setState({
                 received: true,
@@ -80,7 +79,6 @@ class Loading extends React.Component {
         })
         const dataJSON = await rawData.json();
         
-        console.log(dataJSON.standings[0].table[0].team.name);
         return dataJSON;
     }
 
@@ -95,8 +93,8 @@ class Loading extends React.Component {
         }
         else {
             return (
-            <div>
-                <PointsTable data={this.data} />
+            <div className="PointsTablePage">
+                <PointsTable id={this.buttonID} data={this.data.standings[0].table} />
             </div>
             // <div id="loader-container">
             //     <p id="loadingText">Loading</p>

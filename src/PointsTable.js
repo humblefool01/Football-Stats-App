@@ -7,12 +7,67 @@ class PointsTable extends React.Component{
         super(props);        
     }
     render() {
-        return(
-            <div>Table
-                {console.log(this.props.data)}
+        const id = this.props.id;
+        const tableData = this.props.data;
+        const table = [];
+        const header = [];
+        header.push(<th>Pos</th>);
+        header.push(<th>Team Name</th>);
+        header.push(<th>Matches</th>);
+        header.push(<th>Won</th>);
+        header.push(<th>Draw</th>);
+        header.push(<th>Lost</th>);
+        header.push(<th>Pts</th>);
+        header.push(<th>GF</th>);
+        header.push(<th>GA</th>);
+        header.push(<th>GD</th>);
+        table.push(<tr>{header}</tr>);
+
+        for (let i=0; i<tableData.length; i++) {
+            const row = [];
+            row.push(<td>{i+1}</td>);
+            row.push(<td><div className="TeamClass"><img className="ImgLogo" src={tableData[i].team.crestUrl} alt=""></img><span>{tableData[i].team.name}</span></div></td>);
+            row.push(<td>{tableData[i].playedGames}</td>);
+            row.push(<td>{tableData[i].won}</td>);
+            row.push(<td>{tableData[i].draw}</td>);
+            row.push(<td>{tableData[i].lost}</td>);
+            row.push(<td>{tableData[i].points}</td>);
+            row.push(<td>{tableData[i].goalsFor}</td>);
+            row.push(<td>{tableData[i].goalsAgainst}</td>);
+            row.push(<td>{tableData[i].goalDifference}</td>);
+
+            table.push(<tr>{row}</tr>)
+        }
+
+        return(            
+            <div>       
+                {console.log(tableData)}
+                <table className="Table">                    
+                    <tbody>
+                        {table}
+                    </tbody>
+                </table>
             </div>
         )
     }
+
+    Dummy() {
+    }
+    
 }
 
 export default PointsTable;
+
+
+            // <tr>
+            //     <th>Pos</th>
+            //     <th>Team</th>
+            //     <th>Played</th>
+            //     <th>Won</th>
+            //     <th>Draw</th>
+            //     <th>Lost</th>
+            //     <th>Points</th>
+            //     <th>GF</th>
+            //     <th>GA</th>
+            //     <th>GD</th>                                                
+            // </tr>

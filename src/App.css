@@ -1,3 +1,5 @@
+
+
 .App {
   text-align: center;
 }
@@ -14,32 +16,6 @@ nav {
 p {
   margin: 0%;
 }
-
-.search-box {
-  margin-top: 25px;
-  min-width: 50%;
-  min-height: 30px;
-  border-radius: 25px;
-  border: 1px solid rgb(240, 232, 232);
-  padding: 5px;
-  padding-left: 15px;
-  padding-right: 15px;
-  justify-content: space-around;
-  box-shadow: 2px 2px 5px 5px rgb(235, 227, 227);
-  outline: none;
-}
-
-.search-button {
-  min-height: 35px;
-  min-width: 75px;
-  margin-top: 20px;
-  border-radius: 5px;  
-  background: #424240;
-  color: white;
-  box-shadow: none;
-  text-shadow: 0%;
-}
- 
 
 img {
   width: 100%;
@@ -70,6 +46,7 @@ img {
 
 .column:hover {
   background: #20dce3;
+  /* background:#3498db; */
 }
 
 /* Style the counter cards */
@@ -114,11 +91,41 @@ img {
   color: #61dafb;
 }
 
+.ImgLogo {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  margin-top: auto;
+}
+
+.TeamClass{
+  display: flex;
+  align-items: center;
+  padding: 2px; 
+}
+
+table {
+  border-collapse: collapse;  
+}
+th {
+  font-size: 15px;
+}
+
+.PointsTablePage {
+}
+
+.Table {
+  background: #c2c2c2;
+  width: 60%;
+  margin: auto;  
+  }
+
+/* Loading animation */
 
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,800,200);
 
 #loader-container {
-  background-color: #3498db;
+  background-color: #20dce3;
   width: 200px;
   height: 200px;
   color: white;
@@ -128,7 +135,7 @@ img {
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
-  border: 5px solid #3498db;
+  border: 5px solid #20dce3;
   border-radius: 50%;
   -webkit-animation: borderScale 1s infinite ease-in-out;
   animation: borderScale 1s infinite ease-in-out;
@@ -150,7 +157,7 @@ img {
     border: 5px solid white;
   }
   50% {
-    border: 25px solid #3498db;
+    border: 25px solid #20dce3;
   }
   100% {
     border: 5px solid white;
@@ -162,7 +169,7 @@ img {
     border: 5px solid white;
   }
   50% {
-    border: 25px solid #3498db;
+    border: 25px solid #20dce3;
   }
   100% {
     border: 5px solid white;
