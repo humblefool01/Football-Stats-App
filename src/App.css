@@ -46,17 +46,26 @@ img {
 
 .column:hover {
   background: #20dce3;
-  /* background:#3498db; */
 }
 
 /* Style the counter cards */
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
-  /* padding: 10px; */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */  
   text-align: center;
   width: 80%;
   height: 80%;  
 }
+
+.TableCard {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 80%; 
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 
 .container {
   align-content: center;  
@@ -100,25 +109,45 @@ img {
 
 .TeamClass{
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   padding: 2px; 
 }
 
 table {
-  border-collapse: collapse;  
+  border-collapse: collapse;
 }
+
+td {
+  font-size: 2.5vmin;
+}
+
 th {
-  font-size: 15px;
+  font-size: 2.5vmin;
 }
 
 .PointsTablePage {
+  /* background: url("/logos/laliga-logo.png");
+  background-size: 100% 100%;
+  width: 100%;
+  height: 80%; */
+  /* transform:scale(0.8, 0.8); */
+  /* margin-top: 7%; */
+  /* margin-bottom: -50px; */
 }
 
+
 .Table {
-  background: #c2c2c2;
   width: 60%;
   margin: auto;  
+  
+  /* height: 100%; */
   }
+
+  /* @media (max-width: 600px) {
+    body {
+      font-size: 10px;
+    }
+  } */
 
 /* Loading animation */
 

@@ -38,16 +38,12 @@ class PointsTable extends React.Component{
 
             table.push(<tr>{row}</tr>)
         }
-
-        return(            
-            <div>       
-                {console.log(tableData)}
-                <table className="Table">                    
-                    <tbody>
+        return(
+                <table className="TableCard">  
+                    <tbody>     
                         {table}
                     </tbody>
-                </table>
-            </div>
+                </table>            
         )
     }
 
@@ -57,17 +53,3 @@ class PointsTable extends React.Component{
 }
 
 export default PointsTable;
-
-
-            // <tr>
-            //     <th>Pos</th>
-            //     <th>Team</th>
-            //     <th>Played</th>
-            //     <th>Won</th>
-            //     <th>Draw</th>
-            //     <th>Lost</th>
-            //     <th>Points</th>
-            //     <th>GF</th>
-            //     <th>GA</th>
-            //     <th>GD</th>                                                
-            // </tr>

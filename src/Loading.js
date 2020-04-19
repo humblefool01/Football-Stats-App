@@ -19,7 +19,7 @@ class Loading extends React.Component {
         this.laliga = 'http://api.football-data.org/v2/competitions/2014/standings';
         this.ligue1 = 'http://api.football-data.org/v2/competitions/2015/standings';
         this.seriea = 'http://api.football-data.org/v2/competitions/2034/standings';
-
+        this.name = "";
         this.state = {
             received: false,
         }
@@ -39,21 +39,27 @@ class Loading extends React.Component {
         switch (this.buttonID) {
             case 0:
                 this.url = this.laliga;
+                this.name="La Liga";
                 break;
             case 1:
                     this.url = this.ucl;
+                    this.name = "UCL";
                 break;
             case 2:
                     this.url = this.bundesliga;
+                    this.name = "Bundesliga";
                 break;
             case 3:
                     this.url = this.epl;
+                    this.name = "Premier League";
                 break;
             case 4:
                     this.url = this.ligue1;
+                    this.name = "Ligue 1";
                 break;
             case 5:
                     this.url = this.eredivise;
+                    this.name = "Eredivise";
                 break;
             default:
                 console.log("Switch case default error!");
@@ -93,9 +99,12 @@ class Loading extends React.Component {
         }
         else {
             return (
-            <div className="PointsTablePage">
-                <PointsTable id={this.buttonID} data={this.data.standings[0].table} />
-            </div>
+                <div>
+                    <h1>{this.name}</h1>
+                    <div className="PointsTablePage">
+                    <PointsTable id={this.buttonID} data={this.data.standings[0].table} />
+                    </div>
+                </div>
             // <div id="loader-container">
             //     <p id="loadingText">Loading</p>
             // </div>
