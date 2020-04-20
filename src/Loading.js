@@ -92,8 +92,7 @@ class Loading extends React.Component {
         this.buttonID = this.props.location.data;
         if (this.data == null) {
             return (
-                <div id="loader-container">
-                    <p id="loadingText">Loading</p>
+                <div className="loader">                
                 </div>
             );
         }
@@ -105,9 +104,6 @@ class Loading extends React.Component {
                     <PointsTable id={this.buttonID} data={this.data} />
                     </div>
                 </div>
-            // <div id="loader-container">
-            //     <p id="loadingText">Loading</p>
-            // </div>
             );            
         }                                             
 
