@@ -102,7 +102,7 @@ class Loading extends React.Component {
                 <div>
                     <h1>{this.name}</h1>
                     <div className="PointsTablePage">
-                    <PointsTable id={this.buttonID} data={this.data.standings[0].table} />
+                    <PointsTable id={this.buttonID} data={this.data} />
                     </div>
                 </div>
             // <div id="loader-container">

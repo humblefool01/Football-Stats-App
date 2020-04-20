@@ -55,17 +55,19 @@ img {
   width: 80%;
   height: 80%;  
 }
+.Th_Team_name {
+  text-align: left;
+  padding-left: 50px;
+}
 
 .TableCard {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  text-align: center;
   width: 80%; 
   margin-top: 2.5%;
   margin-bottom: 2.5%;
   margin-left: auto;
   margin-right: auto;
 }
-
 
 .container {
   align-content: center;  
@@ -109,12 +111,12 @@ img {
 
 .TeamClass{
   display: flex;
-  /* align-items: center; */
-  padding: 2px; 
+  width: 250px;
 }
 
 table {
-  border-collapse: collapse;
+  table-layout: auto;
+  border-collapse: collapse;  
 }
 
 td {
@@ -138,9 +140,7 @@ th {
 
 .Table {
   width: 60%;
-  margin: auto;  
-  
-  /* height: 100%; */
+  margin: auto;    
   }
 
   /* @media (max-width: 600px) {
