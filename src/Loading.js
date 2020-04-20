@@ -43,7 +43,7 @@ class Loading extends React.Component {
                 break;
             case 1:
                     this.url = this.ucl;
-                    this.name = "UCL";
+                    this.name = "UEFA Champions League";
                 break;
             case 2:
                     this.url = this.bundesliga;
@@ -100,7 +100,7 @@ class Loading extends React.Component {
         else {
             return (
                 <div>
-                    <h1>{this.name}</h1>
+                    <nav><h1>{this.name}</h1></nav>
                     <div className="PointsTablePage">
                     <PointsTable id={this.buttonID} data={this.data} />
                     </div>

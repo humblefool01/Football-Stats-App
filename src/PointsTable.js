@@ -11,6 +11,7 @@ class PointsTable extends React.Component{
         const tableData = this.props.data;
         const leagueTableData = tableData.standings[0].table;
         var table = [];
+        var groupName = "";
 
         if (id != 1) {
             table.push(this.Dummy());
@@ -40,6 +41,7 @@ class PointsTable extends React.Component{
             console.log("TableData: ", tableData);
             const dummy = [];
             for (let i=0; i< tableData.standings.length; i+=3) {
+                this.groupName = tableData.standings[i].group;
                 table = [];
                 table.push(this.Dummy());
                 for (let j=0; j<tableData.standings[i].table.length; j++) {                                        
@@ -59,6 +61,7 @@ class PointsTable extends React.Component{
                     table.push(<tr>{row}</tr>);
                 }
                 dummy.push(<table className="TableCard">  
+                            <div className="GroupName"><b>{this.groupName}</b></div>
                             <tbody>     
                                 {table}
                             </tbody>
