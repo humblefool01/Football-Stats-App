@@ -89,6 +89,7 @@ class Loading extends React.Component {
     }
 
     render() { 
+        var backgroungImg = [];
         this.buttonID = this.props.location.data;
         if (this.data == null) {
             return (
@@ -97,11 +98,35 @@ class Loading extends React.Component {
             );
         }
         else {
+            switch (this.buttonID) {
+                case 0:
+                        backgroungImg.push(<img src="" className="BackgroundImgLaliga"></img>);
+                    break;
+                case 1:
+                        backgroungImg.push(<img src="" className="BackgroundImgUCL"></img>);
+                    break; 
+                case 2:
+                        backgroungImg.push(<img src="" className="BackgroundImgBundesliga"></img>);
+                    break;
+                case 3:
+                        backgroungImg.push(<img src="" className="BackgroundImgEPL"></img>);
+                    break;
+                case 4:
+                        backgroungImg.push(<img src="" className="BackgroundImgLigue1"></img>);
+                    break;
+                case 5:
+                        backgroungImg.push(<img src="" className="BackgroundImgEredivise"></img>);
+                    break;
+            }
             return (
                 <div>
                     <nav><h1>{this.name}</h1></nav>
                     <div className="PointsTablePage">
-                    <PointsTable id={this.buttonID} data={this.data} />
+                    <PointsTable id={this.buttonID} data={this.data} />                    
+                    </div>
+                    <div>
+                        {/* <img src="" className="BackgroundImgLaliga"></img> */}
+                        {backgroungImg}
                     </div>
                 </div>
             );            

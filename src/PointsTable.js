@@ -10,14 +10,36 @@ class PointsTable extends React.Component{
         const id = this.props.id;
         const tableData = this.props.data;
         const leagueTableData = tableData.standings[0].table;
+        var uclQ;
         var table = [];
         var groupName = "";
+
+        switch (id) {
+            case 1:
+                uclQ = 0;                
+                break;
+            case 4:
+                uclQ = 2;
+                break;
+            case 5:      
+                uclQ = 0;          
+                break;
+            default:
+                uclQ = 4;
+                break;
+        }
 
         if (id != 1) {
             table.push(this.Dummy());
             for (let i=0; i<leagueTableData.length; i++) {
-                const row = [];
-                row.push(<td>{i+1}</td>);
+                const row = [];  
+                if (i+1 <= uclQ) {
+                    row.push(<td><div className="TdUcl">{i+1}</div></td>);    
+                }
+                else {
+                    row.push(<td>{i+1}</td>);    
+                }              
+                // row.push(<td className="TdUcl">{i+1}</td>);
                 row.push(<td><div className="TeamClass"><img className="ImgLogo" src={leagueTableData[i].team.crestUrl} alt=""></img><span>{leagueTableData[i].team.name}</span></div></td>);
                 row.push(<td>{leagueTableData[i].playedGames}</td>);
                 row.push(<td>{leagueTableData[i].won}</td>);

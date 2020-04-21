@@ -73,7 +73,70 @@ img {
   margin-bottom: 2.5%;
   margin-left: auto;
   margin-right: auto;
+  background: white;
 }
+
+.BackgroundImgLaliga {
+  background-image: url("/logos/laliga-logo.png");
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 0vh;
+  left: 0vw;
+  background-position: center;
+  background-size: 300px;  
+  opacity: 0.3;  
+}
+.BackgroundImgBundesliga {
+  background-image: url("/logos/bundesliga-logo.png");
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 0vh;
+  left: 0vw;
+  background-position: center;
+  background-size: 300px;  
+  opacity: 0.3;  
+}
+.BackgroundImgEPL {
+  background-image: url("/logos/epl-logo.png");
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 0vh;
+  left: 0vw;
+  background-position: center;
+  background-size: 300px;  
+  opacity: 0.3;  
+}
+.BackgroundImgLigue1 {
+  background-image: url("/logos/ligue1-logo.png");
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 0vh;
+  left: 0vw;
+  background-position: center;
+  background-size: 300px;  
+  opacity: 0.3;  
+}
+.BackgroundImgEredivise {
+  background-image: url("/logos/eredivise-logo.png");
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 0vh;
+  left: 0vw;
+  background-position: center;
+  background-size: 300px;  
+  opacity: 0.3;  
+}
+.BackgroundImgUCL {
+  background-image: url("/logos/ucl-logo.png");
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 0vh;
+  left: 0vw;
+  background-position: center;
+  background-size: 300px;  
+  opacity: 0.3;  
+}
+
 
 .container {
   align-content: center;  
@@ -123,6 +186,12 @@ img {
 table {
   table-layout: auto;
   border-collapse: collapse;  
+}
+
+.TdUcl {
+  /* background: rgb(40, 231, 40); */
+    color: rgb(5, 252, 116); 
+    
 }
 
 td {
