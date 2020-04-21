@@ -44,8 +44,7 @@ class PointsTable extends React.Component{
                 }
                 // row.push(<td className="TdUcl">{i+1}</td>);
                 row.push(<td><Link className="LinkTag" to={{pathname: "/TeamDetails", data: leagueTableData[i].team.id}}>
-                    <button key={i+1} className="TeamClass" onClick={() => {this.TeamButtonClicked(leagueTableData, i)}}>
-                            
+                    <button key={i+1} className="TeamClass" onClick={() => {this.TeamButtonClicked(leagueTableData, i)}}>                            
                             <img className="ImgLogo" src={leagueTableData[i].team.crestUrl} alt=""></img>
                             <span>{leagueTableData[i].team.name}</span>
                         </button>

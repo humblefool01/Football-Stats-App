@@ -215,6 +215,13 @@ th {
     text-decoration: none;
   }
 
+  .TeamDetailsLogo {
+    width: 40px;
+    height: 40px;
+    margin-top: 15px;
+    margin-right: 10px;
+    /* margin-right: 10px; */
+  }
 
 /* Loading animation */
 .loader {
