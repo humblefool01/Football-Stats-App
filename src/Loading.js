@@ -72,7 +72,6 @@ class Loading extends React.Component {
                 received: true,
             })
         }
-        // this.render();
     }
 
 

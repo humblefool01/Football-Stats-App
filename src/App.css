@@ -211,6 +211,11 @@ th {
   margin: auto;    
   }
 
+  .LinkTag {
+    text-decoration: none;
+  }
+
+
 /* Loading animation */
 .loader {
   animation: load 1s linear infinite;

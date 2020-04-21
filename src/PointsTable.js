@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { concat } from 'rxjs';
 
 class PointsTable extends React.Component{
     constructor(props) {
         super(props);        
+        this.state = {
+            teamClicked: false,
+        }
     }
     render() {
         const id = this.props.id;
@@ -39,7 +43,14 @@ class PointsTable extends React.Component{
                     row.push(<td>{i+1}</td>);    
                 }
                 // row.push(<td className="TdUcl">{i+1}</td>);
-                row.push(<td><button key={i+1} className="TeamClass" onClick={() => {this.TeamButtonClicked(leagueTableData, i)}}><img className="ImgLogo" src={leagueTableData[i].team.crestUrl} alt=""></img><span>{leagueTableData[i].team.name}</span></button></td>);
+                row.push(<td><Link className="LinkTag" to={{pathname: "/TeamDetails", data: leagueTableData[i].team.id}}>
+                    <button key={i+1} className="TeamClass" onClick={() => {this.TeamButtonClicked(leagueTableData, i)}}>
+                            
+                            <img className="ImgLogo" src={leagueTableData[i].team.crestUrl} alt=""></img>
+                            <span>{leagueTableData[i].team.name}</span>
+                        </button>
+                        </Link>
+                    </td>);
                 row.push(<td>{leagueTableData[i].playedGames}</td>);
                 row.push(<td>{leagueTableData[i].won}</td>);
                 row.push(<td>{leagueTableData[i].draw}</td>);
@@ -74,7 +85,12 @@ class PointsTable extends React.Component{
                         row.push(<td>{j+1}</td>);
                     }
                     // row.push(<td><div className="TdUcl">{j+1}</div></td>);
-                    row.push(<td><button className="TeamClass" onClick={() => {this.TeamButtonClicked(groupTable, j)}}><img className="ImgLogo" src={groupTable[j].team.crestUrl} alt=""></img><span>{groupTable[j].team.name}</span></button></td>);
+                    row.push(<td>
+                        <Link className="LinkTag" to={{pathname: "/TeamDetails", data: groupTable[j].team.id}}>
+                        <button className="TeamClass" onClick={() => {this.TeamButtonClicked(groupTable, j)}}><img className="ImgLogo" src={groupTable[j].team.crestUrl} alt=""></img><span>{groupTable[j].team.name}</span>
+                        </button>
+                        </Link>
+                        </td>);
                     row.push(<td>{groupTable[j].playedGames}</td>);
                     row.push(<td>{groupTable[j].won}</td>);
                     row.push(<td>{groupTable[j].draw}</td>);
@@ -99,7 +115,10 @@ class PointsTable extends React.Component{
         }
     }
     TeamButtonClicked(leagueTableData, teamIndex) {
-        console.log(leagueTableData[teamIndex].team.name);
+        console.log(leagueTableData[teamIndex].team.id, leagueTableData[teamIndex].team.name);
+        this.setState({
+            teamClicked: true,
+        })
     }
 
     TableHeader() {
