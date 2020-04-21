@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from 'reactstrap';
 import { concat } from 'rxjs';
 
 class PointsTable extends React.Component{
@@ -16,7 +15,7 @@ class PointsTable extends React.Component{
 
         switch (id) {
             case 1:
-                uclQ = 0;                
+                uclQ = 2;                
                 break;
             case 4:
                 uclQ = 2;
@@ -69,7 +68,12 @@ class PointsTable extends React.Component{
                 for (let j=0; j<tableData.standings[i].table.length; j++) {                                        
                     const groupTable = tableData.standings[i].table[j];
                     const row = [];
-                    row.push(<td>{j+1}</td>);
+                    if (j+1 <= uclQ) {
+                        row.push(<td><div className="TdUcl">{j+1}</div></td>);
+                    }else {
+                        row.push(<td>{j+1}</td>);
+                    }
+                    // row.push(<td><div className="TdUcl">{j+1}</div></td>);
                     row.push(<td><div className="TeamClass"><img className="ImgLogo" src={groupTable.team.crestUrl} alt=""></img><span>{groupTable.team.name}</span></div></td>);
                     row.push(<td>{groupTable.playedGames}</td>);
                     row.push(<td>{groupTable.won}</td>);

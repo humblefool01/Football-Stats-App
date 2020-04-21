@@ -100,22 +100,22 @@ class Loading extends React.Component {
         else {
             switch (this.buttonID) {
                 case 0:
-                        backgroungImg.push(<img src="" className="BackgroundImgLaliga"></img>);
+                        backgroungImg.push(<img className="BackgroundImgLaliga"></img>);
                     break;
                 case 1:
-                        backgroungImg.push(<img src="" className="BackgroundImgUCL"></img>);
+                        backgroungImg.push(<img className="BackgroundImgUCL"></img>);
                     break; 
                 case 2:
-                        backgroungImg.push(<img src="" className="BackgroundImgBundesliga"></img>);
+                        backgroungImg.push(<img className="BackgroundImgBundesliga"></img>);
                     break;
                 case 3:
-                        backgroungImg.push(<img src="" className="BackgroundImgEPL"></img>);
+                        backgroungImg.push(<img className="BackgroundImgEPL"></img>);
                     break;
                 case 4:
-                        backgroungImg.push(<img src="" className="BackgroundImgLigue1"></img>);
+                        backgroungImg.push(<img className="BackgroundImgLigue1"></img>);
                     break;
                 case 5:
-                        backgroungImg.push(<img src="" className="BackgroundImgEredivise"></img>);
+                        backgroungImg.push(<img className="BackgroundImgEredivise"></img>);
                     break;
             }
             return (
@@ -125,7 +125,6 @@ class Loading extends React.Component {
                     <PointsTable id={this.buttonID} data={this.data} />                    
                     </div>
                     <div>
-                        {/* <img src="" className="BackgroundImgLaliga"></img> */}
                         {backgroungImg}
                     </div>
                 </div>
