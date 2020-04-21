@@ -137,7 +137,6 @@ img {
   opacity: 0.25;  
 }
 
-
 .container {
   align-content: center;  
   width: 80%;
@@ -181,6 +180,12 @@ img {
 .TeamClass{
   display: flex;
   width: 250px;
+  background: white;
+  outline: none;
+  border: none;
+}
+.TeamClass:hover {   
+  background: cyan;
 }
 
 table {
@@ -190,11 +195,7 @@ table {
 
 .TdUcl {
   /* background: rgb(40, 231, 40); */
-
-    color: rgb(5, 252, 116); 
-    /* width: 10px;
-    height: 10px; */
-    
+    color: rgb(5, 252, 116);     
 }
 
 td {

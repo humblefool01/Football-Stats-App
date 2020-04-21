@@ -29,7 +29,7 @@ class PointsTable extends React.Component{
         }
 
         if (id != 1) {
-            table.push(this.Dummy());
+            table.push(this.TableHeader());
             for (let i=0; i<leagueTableData.length; i++) {
                 const row = [];  
                 if (i+1 <= uclQ) {
@@ -37,9 +37,9 @@ class PointsTable extends React.Component{
                 }
                 else {
                     row.push(<td>{i+1}</td>);    
-                }              
+                }
                 // row.push(<td className="TdUcl">{i+1}</td>);
-                row.push(<td><div className="TeamClass"><img className="ImgLogo" src={leagueTableData[i].team.crestUrl} alt=""></img><span>{leagueTableData[i].team.name}</span></div></td>);
+                row.push(<td><button key={i+1} className="TeamClass" onClick={() => {this.TeamButtonClicked(leagueTableData, i)}}><img className="ImgLogo" src={leagueTableData[i].team.crestUrl} alt=""></img><span>{leagueTableData[i].team.name}</span></button></td>);
                 row.push(<td>{leagueTableData[i].playedGames}</td>);
                 row.push(<td>{leagueTableData[i].won}</td>);
                 row.push(<td>{leagueTableData[i].draw}</td>);
@@ -59,14 +59,14 @@ class PointsTable extends React.Component{
                     </table>            
             )
         } else {
-            console.log("TableData: ", tableData);
-            const dummy = [];
+            const outerCard = [];
             for (let i=0; i< tableData.standings.length; i+=3) {
                 this.groupName = tableData.standings[i].group;
                 table = [];
-                table.push(this.Dummy());
+                table.push(this.TableHeader());
                 for (let j=0; j<tableData.standings[i].table.length; j++) {                                        
-                    const groupTable = tableData.standings[i].table[j];
+                    // const groupTable = tableData.standings[i].table[j];
+                    const groupTable = tableData.standings[i].table;
                     const row = [];
                     if (j+1 <= uclQ) {
                         row.push(<td><div className="TdUcl">{j+1}</div></td>);
@@ -74,19 +74,19 @@ class PointsTable extends React.Component{
                         row.push(<td>{j+1}</td>);
                     }
                     // row.push(<td><div className="TdUcl">{j+1}</div></td>);
-                    row.push(<td><div className="TeamClass"><img className="ImgLogo" src={groupTable.team.crestUrl} alt=""></img><span>{groupTable.team.name}</span></div></td>);
-                    row.push(<td>{groupTable.playedGames}</td>);
-                    row.push(<td>{groupTable.won}</td>);
-                    row.push(<td>{groupTable.draw}</td>);
-                    row.push(<td>{groupTable.lost}</td>);
-                    row.push(<td>{groupTable.points}</td>);
-                    row.push(<td>{groupTable.goalsFor}</td>);
-                    row.push(<td>{groupTable.goalsAgainst}</td>);
-                    row.push(<td>{groupTable.goalDifference}</td>);
+                    row.push(<td><button className="TeamClass" onClick={() => {this.TeamButtonClicked(groupTable, j)}}><img className="ImgLogo" src={groupTable[j].team.crestUrl} alt=""></img><span>{groupTable[j].team.name}</span></button></td>);
+                    row.push(<td>{groupTable[j].playedGames}</td>);
+                    row.push(<td>{groupTable[j].won}</td>);
+                    row.push(<td>{groupTable[j].draw}</td>);
+                    row.push(<td>{groupTable[j].lost}</td>);
+                    row.push(<td>{groupTable[j].points}</td>);
+                    row.push(<td>{groupTable[j].goalsFor}</td>);
+                    row.push(<td>{groupTable[j].goalsAgainst}</td>);
+                    row.push(<td>{groupTable[j].goalDifference}</td>);
 
                     table.push(<tr>{row}</tr>);
                 }
-                dummy.push(<table className="TableCard">  
+                outerCard.push(<table className="TableCard">  
                             <div className="GroupName"><b>{this.groupName}</b></div>
                             <tbody>     
                                 {table}
@@ -94,12 +94,15 @@ class PointsTable extends React.Component{
                         </table>);
                 // table = [];
             }
-            return (<div>{dummy}</div>    
+            return (<div>{outerCard}</div>    
             );
         }
     }
+    TeamButtonClicked(leagueTableData, teamIndex) {
+        console.log(leagueTableData[teamIndex].team.name);
+    }
 
-    Dummy() {
+    TableHeader() {
         const T = [];
         const header = [];
         header.push(<th>Pos</th>);

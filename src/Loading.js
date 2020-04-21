@@ -124,9 +124,9 @@ class Loading extends React.Component {
                     <div className="PointsTablePage">
                     <PointsTable id={this.buttonID} data={this.data} />                    
                     </div>
-                    <div>
+                    {/* <div>
                         {backgroungImg}
-                    </div>
+                    </div> */}
                 </div>
             );            
         }                                             
