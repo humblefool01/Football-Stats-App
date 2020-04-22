@@ -42,11 +42,10 @@ class PointsTable extends React.Component{
                 else {
                     row.push(<td>{i+1}</td>);    
                 }
-                // row.push(<td className="TdUcl">{i+1}</td>);
                 row.push(<td><Link className="LinkTag" to={{pathname: "/TeamDetails", data: leagueTableData[i].team.id}}>
                     <button key={i+1} className="TeamClass" onClick={() => {this.TeamButtonClicked(leagueTableData, i)}}>                            
                             <img className="ImgLogo" src={leagueTableData[i].team.crestUrl} alt=""></img>
-                            <span>{leagueTableData[i].team.name}</span>
+                            <span style={{fontSize: "120%"}}>{leagueTableData[i].team.name}</span>
                         </button>
                         </Link>
                     </td>);
@@ -62,11 +61,13 @@ class PointsTable extends React.Component{
                 table.push(<tr>{row}</tr>)
             }         
             return(
+                <div>
                     <table className="TableCard">  
                         <tbody>     
                             {table}
                         </tbody>
-                    </table>            
+                    </table>    
+                </div>        
             )
         } else {
             const outerCard = [];
@@ -74,8 +75,7 @@ class PointsTable extends React.Component{
                 this.groupName = tableData.standings[i].group;
                 table = [];
                 table.push(this.TableHeader());
-                for (let j=0; j<tableData.standings[i].table.length; j++) {                                        
-                    // const groupTable = tableData.standings[i].table[j];
+                for (let j=0; j<tableData.standings[i].table.length; j++) {
                     const groupTable = tableData.standings[i].table;
                     const row = [];
                     if (j+1 <= uclQ) {
@@ -83,7 +83,6 @@ class PointsTable extends React.Component{
                     }else {
                         row.push(<td>{j+1}</td>);
                     }
-                    // row.push(<td><div className="TdUcl">{j+1}</div></td>);
                     row.push(<td>
                         <Link className="LinkTag" to={{pathname: "/TeamDetails", data: groupTable[j].team.id}}>
                         <button className="TeamClass" onClick={() => {this.TeamButtonClicked(groupTable, j)}}><img className="ImgLogo" src={groupTable[j].team.crestUrl} alt=""></img><span>{groupTable[j].team.name}</span>
@@ -107,12 +106,12 @@ class PointsTable extends React.Component{
                                 {table}
                             </tbody>
                         </table>);
-                // table = [];
             }
             return (<div>{outerCard}</div>    
             );
         }
     }
+
     TeamButtonClicked(leagueTableData, teamIndex) {
         console.log(leagueTableData[teamIndex].team.id, leagueTableData[teamIndex].team.name);
         this.setState({

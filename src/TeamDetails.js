@@ -50,7 +50,7 @@ class TeamDetails extends React.Component {
                 if (this.data.squad[i].role == "PLAYER") {
                     switch(this.data.squad[i].position) {
                         case "Goalkeeper":
-                            goalkeepers.push(<tr>{this.data.squad[i].name}</tr>);    
+                            goalkeepers.push(<tr className="TeamDetails-tr">{this.data.squad[i].name}</tr>);    
                             break;
                         case "Defender":
                             defenders.push(<tr>{this.data.squad[i].name}</tr>);
@@ -62,40 +62,41 @@ class TeamDetails extends React.Component {
                             attackers.push(<tr>{this.data.squad[i].name}</tr>);
                             break;
                     }
-                } else {
+                } else if (this.data.squad[i].role == "COACH") {
                     manager.push(<tr>{this.data.squad[i].name}</tr>)
                 }
             }
 
-            managerCard.push(<table className="TableCard">
+            managerCard.push(<table className="TeamDetailsCard">
                 <h2>Manager</h2>
                 <tbody>
                     {manager}
                 </tbody>
+                <div></div>
             </table>)
 
-            goalkeepersCard.push(<table className="TableCard">
+            goalkeepersCard.push(<table className="TeamDetailsCard">
                 <h2>Goalkeepers</h2>
                 <tbody>
                     {goalkeepers}
                 </tbody>
             </table>)
 
-            defendersCard.push(<table className="TableCard">
+            defendersCard.push(<table className="TeamDetailsCard">
                 <h2>Defenders</h2>
                 <tbody>
                     {defenders}
                 </tbody>
             </table>)
 
-            midfieldersCard.push(<table className="TableCard">
+            midfieldersCard.push(<table className="TeamDetailsCard">
                 <h2>Midfielders</h2>
                 <tbody>
                     {midfielders}
                 </tbody>
             </table>)
 
-            attackersCard.push(<table className="TableCard">
+            attackersCard.push(<table className="TeamDetailsCard">
                 <h2>Attackers</h2>
                 <tbody>
                     {attackers}

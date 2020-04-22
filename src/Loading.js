@@ -1,9 +1,6 @@
 import React from 'react'; 
-import {useState, useEffect} from 'react';
-import { Link } from 'react-router-dom';
 import './App.css';
 import PointsTable from './PointsTable';
-// import { runInThisContext } from 'vm';
 
 class Loading extends React.Component {        
 
@@ -123,9 +120,6 @@ class Loading extends React.Component {
                     <div className="PointsTablePage">
                     <PointsTable id={this.buttonID} data={this.data} />                    
                     </div>
-                    {/* <div>
-                        {backgroungImg}
-                    </div> */}
                 </div>
             );            
         }                                             

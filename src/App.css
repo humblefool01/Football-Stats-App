@@ -45,7 +45,6 @@ img {
 }
 
 .column:hover {
-  /* background: #20dce3; */
   background: cyan;
 }
 
@@ -194,7 +193,6 @@ table {
 }
 
 .TdUcl {
-  /* background: rgb(40, 231, 40); */
     color: rgb(5, 252, 116);     
 }
 
@@ -220,8 +218,13 @@ th {
     height: 40px;
     margin-top: 15px;
     margin-right: 10px;
-    /* margin-right: 10px; */
   }
+
+.TeamDetailsCard {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: auto;
+  width: 500px;
+}
 
 /* Loading animation */
 .loader {
