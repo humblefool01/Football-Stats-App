@@ -85,7 +85,8 @@ class PointsTable extends React.Component{
                     }
                     row.push(<td>
                         <Link className="LinkTag" to={{pathname: "/TeamDetails", data: groupTable[j].team.id}}>
-                        <button className="TeamClass" onClick={() => {this.TeamButtonClicked(groupTable, j)}}><img className="ImgLogo" src={groupTable[j].team.crestUrl} alt=""></img><span>{groupTable[j].team.name}</span>
+                        <button className="TeamClass" onClick={() => {this.TeamButtonClicked(groupTable, j)}}><img className="ImgLogo" src={groupTable[j].team.crestUrl} alt=""></img>
+                        <span style={{fontSize: "120%"}}>{groupTable[j].team.name}</span>
                         </button>
                         </Link>
                         </td>);
