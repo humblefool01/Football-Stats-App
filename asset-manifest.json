@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/Football-Stats-App/static/css/main.51f9d22a.chunk.css",
-    "main.js": "/Football-Stats-App/static/js/main.a7d37cdb.chunk.js",
-    "main.js.map": "/Football-Stats-App/static/js/main.a7d37cdb.chunk.js.map",
+    "main.css": "/Football-Stats-App/static/css/main.537fc7bb.chunk.css",
+    "main.js": "/Football-Stats-App/static/js/main.cf17a586.chunk.js",
+    "main.js.map": "/Football-Stats-App/static/js/main.cf17a586.chunk.js.map",
     "runtime-main.js": "/Football-Stats-App/static/js/runtime-main.46cf7e3a.js",
     "runtime-main.js.map": "/Football-Stats-App/static/js/runtime-main.46cf7e3a.js.map",
     "static/js/2.2ae81ca6.chunk.js": "/Football-Stats-App/static/js/2.2ae81ca6.chunk.js",
     "static/js/2.2ae81ca6.chunk.js.map": "/Football-Stats-App/static/js/2.2ae81ca6.chunk.js.map",
     "index.html": "/Football-Stats-App/index.html",
-    "precache-manifest.1e3306dcc405426479cb6ac3e0295d00.js": "/Football-Stats-App/precache-manifest.1e3306dcc405426479cb6ac3e0295d00.js",
+    "precache-manifest.74b58cfca08173cc8231683d07b9d092.js": "/Football-Stats-App/precache-manifest.74b58cfca08173cc8231683d07b9d092.js",
     "service-worker.js": "/Football-Stats-App/service-worker.js",
-    "static/css/main.51f9d22a.chunk.css.map": "/Football-Stats-App/static/css/main.51f9d22a.chunk.css.map",
+    "static/css/main.537fc7bb.chunk.css.map": "/Football-Stats-App/static/css/main.537fc7bb.chunk.css.map",
     "static/js/2.2ae81ca6.chunk.js.LICENSE.txt": "/Football-Stats-App/static/js/2.2ae81ca6.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.46cf7e3a.js",
     "static/js/2.2ae81ca6.chunk.js",
-    "static/css/main.51f9d22a.chunk.css",
-    "static/js/main.a7d37cdb.chunk.js"
+    "static/css/main.537fc7bb.chunk.css",
+    "static/js/main.cf17a586.chunk.js"
   ]
 }
